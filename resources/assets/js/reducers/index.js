@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import LibraryReducer from './LibraryReducer';
+import AuthReducer from './AuthReducer';
 
 export default combineReducers({
-    libraries: () => 'Sachin Singh'
+    auth: () => AuthReducer
 });

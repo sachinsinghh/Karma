@@ -1466,7 +1466,7 @@ module.exports = ReactPropTypesSecret;
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
 /* unused harmony reexport connectAdvanced */
 /* unused harmony reexport ReactReduxContext */
-/* unused harmony reexport connect */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__connect_connect__["a"]; });
 /* unused harmony reexport batch */
 
 
@@ -4151,14 +4151,11 @@ var Header = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Header__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Slider__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Facility__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Caraousel__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Footer__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_router_dom__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Slider__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Facility__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Caraousel__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Footer__ = __webpack_require__(31);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4174,35 +4171,1720 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-
-
 var Home = function (_Component) {
-    _inherits(Home, _Component);
+	_inherits(Home, _Component);
 
-    function Home() {
-        _classCallCheck(this, Home);
+	function Home() {
+		_classCallCheck(this, Home);
 
-        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-    }
+		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+	}
 
-    _createClass(Home, [{
-        key: 'render',
-        value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Slider__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Facility__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__Caraousel__["a" /* default */], null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__Footer__["a" /* default */], null)
-            );
-        }
-    }]);
+	_createClass(Home, [{
+		key: 'render',
+		value: function render() {
+			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'div',
+				null,
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'section',
+					{ className: 'banner-area' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'container' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'row fullscreen align-items-center justify-content-start' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-12' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'active-banner-slider owl-carousel' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'row single-slide align-items-center d-flex' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'col-lg-5 col-md-6' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'banner-content' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h1',
+													null,
+													'Sachin New ',
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+													'Collection!'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'p',
+													null,
+													'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'div',
+													{ className: 'add-bag d-flex align-items-center' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'a',
+														{ className: 'add-btn', href: '' },
+														__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-cross' })
+													),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'span',
+														{ className: 'add-text text-uppercase' },
+														'Add to Bag'
+													)
+												)
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'col-lg-7' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'banner-img' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: './img/banner/banner-img.png', alt: '' })
+											)
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'row single-slide' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'col-lg-5' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'banner-content' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h1',
+													null,
+													'Nike New ',
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+													'Collection!'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'p',
+													null,
+													'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'div',
+													{ className: 'add-bag d-flex align-items-center' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'a',
+														{ className: 'add-btn', href: '' },
+														__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-cross' })
+													),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'span',
+														{ className: 'add-text text-uppercase' },
+														'Add to Bag'
+													)
+												)
+											)
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'col-lg-7' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'banner-img' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/banner/banner-img.png', alt: '' })
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'section',
+					{ className: 'features-area section_gap' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'container' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'row features-inner' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3 col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-features' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'f-icon' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/features/f-icon1.png', alt: '' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'Free Delivery'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Free Shipping on all order'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3 col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-features' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'f-icon' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/features/f-icon2.png', alt: '' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'Return Policy'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Free Shipping on all order'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3 col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-features' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'f-icon' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/features/f-icon3.png', alt: '' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'24/7 Support'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Free Shipping on all order'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3 col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-features' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'f-icon' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/features/f-icon4.png', alt: '' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'Secure Payment'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Free Shipping on all order'
+									)
+								)
+							)
+						)
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'section',
+					{ className: 'owl-carousel active-product-area section_gap' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'single-product-slider' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'container' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'row justify-content-center' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-6 text-center' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'section-title' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'h1',
+											null,
+											'Latest Products'
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'p',
+											null,
+											'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+										)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'row' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p1.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p2.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p3.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p4.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p5.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p6.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p7.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p8.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					),
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'single-product-slider' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'container' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'row justify-content-center' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-6 text-center' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'section-title' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'h1',
+											null,
+											'Coming Products'
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'p',
+											null,
+											'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+										)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'row' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p6.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p8.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p3.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p5.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p1.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p4.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p1.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'col-lg-3 col-md-6' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'single-product' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { className: 'img-fluid', src: 'img/product/p8.jpg', alt: '' }),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'product-details' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'h6',
+												null,
+												'addidas New Hammer sole for Sports person'
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'price' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													null,
+													'$150.00'
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'h6',
+													{ className: 'l-through' },
+													'$210.00'
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'prd-bottom' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'ti-bag' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'add to bag'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-heart' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'Wishlist'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-sync' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'compare'
+													)
+												),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'a',
+													{ href: '', className: 'social-info' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'lnr lnr-move' }),
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+														'p',
+														{ className: 'hover-text' },
+														'view more'
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'footer',
+					{ className: 'footer-area section_gap' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'container' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'row' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3  col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-footer-widget' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'About Us'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.'
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-4  col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-footer-widget' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'Newsletter'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Stay update with our latest'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: '', id: 'mc_embed_signup' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'form',
+											{
+												target: '_blank', noValidate: 'true', action: 'https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01',
+												method: 'get', className: 'form-inline'
+											},
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'div',
+												{ className: 'd-flex flex-row' },
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+													className: 'form-control', name: 'EMAIL', placeholder: 'Enter Email',
+													required: '', type: 'email'
+												}),
+												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+													'button',
+													{ className: 'click-btn btn btn-default' },
+													__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-long-arrow-right', 'aria-hidden': 'true' })
+												)
+											),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'info' })
+										)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-3  col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-footer-widget mail-chimp' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										{ className: 'mb-20' },
+										'Instragram Feed'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'ul',
+										{ className: 'instafeed d-flex flex-wrap' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i1.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i2.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i3.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i4.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i5.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i6.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i7.jpg', alt: '' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'li',
+											null,
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'img/i8.jpg', alt: '' })
+										)
+									)
+								)
+							),
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'col-lg-2 col-md-6 col-sm-6' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'div',
+									{ className: 'single-footer-widget' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'h6',
+										null,
+										'Follow Us'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'p',
+										null,
+										'Let us be social'
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'footer-social d-flex align-items-center' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'a',
+											{ href: '#' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-facebook' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'a',
+											{ href: '#' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-twitter' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'a',
+											{ href: '#' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-dribbble' })
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'a',
+											{ href: '#' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-behance' })
+										)
+									)
+								)
+							)
+						),
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'footer-bottom d-flex justify-content-center align-items-center flex-wrap' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'p',
+								{ className: 'footer-text m-0' },
+								'All rights reserved '
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
 
-    return Home;
+	return Home;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Home);
+var mapStateToProps = function mapStateToProps(state) {
+	return { libraries: state.libraries };
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps)(Home));
 
 /***/ }),
 /* 28 */
@@ -4356,7 +6038,7 @@ var Slider = function (_Component) {
     return Slider;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Slider);
+/* unused harmony default export */ var _unused_webpack_default_export = (Slider);
 
 /***/ }),
 /* 29 */
@@ -4500,7 +6182,7 @@ var Facility = function (_Component) {
     return Facility;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Facility);
+/* unused harmony default export */ var _unused_webpack_default_export = (Facility);
 
 /***/ }),
 /* 30 */
@@ -5828,7 +7510,7 @@ var Caraousel = function (_Component) {
 	return Caraousel;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Caraousel);
+/* unused harmony default export */ var _unused_webpack_default_export = (Caraousel);
 
 /***/ }),
 /* 31 */
@@ -6051,7 +7733,7 @@ var Footer = function (_Component) {
 	return Footer;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Footer);
+/* unused harmony default export */ var _unused_webpack_default_export = (Footer);
 
 /***/ }),
 /* 32 */
@@ -6079,6 +7761,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_pages_Home__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_pages_Blog__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_pages_Contact__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_Login__ = __webpack_require__(141);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -6091,6 +7774,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
 /* eslint-disable no-mixed-spaces-and-tabs */
+
 
 
 
@@ -6129,7 +7813,8 @@ var App = function (_Component) {
 																												null,
 																												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/', exact: true, component: __WEBPACK_IMPORTED_MODULE_7__components_pages_Home__["a" /* default */] }),
 																												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/blog', component: __WEBPACK_IMPORTED_MODULE_8__components_pages_Blog__["a" /* default */] }),
-																												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/contact', component: __WEBPACK_IMPORTED_MODULE_9__components_pages_Contact__["a" /* default */] })
+																												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/contact', component: __WEBPACK_IMPORTED_MODULE_9__components_pages_Contact__["a" /* default */] }),
+																												__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_react_router_dom__["c" /* Route */], { path: '/admin', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_Login__["a" /* default */] })
 																								)
 																				)
 																)
@@ -31613,7 +33298,7 @@ function createConnect(_temp) {
     }, extraOptions));
   };
 }
-/* unused harmony default export */ var _unused_webpack_default_export = (createConnect());
+/* harmony default export */ __webpack_exports__["a"] = (createConnect());
 
 /***/ }),
 /* 46 */
@@ -32904,36 +34589,20 @@ module.exports = Array.isArray || function (arr) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LibraryReducer__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AuthReducer__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AuthReducer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__AuthReducer__);
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
-    libraries: function libraries() {
-        return 'Sachin Singh';
+    auth: function auth() {
+        return __WEBPACK_IMPORTED_MODULE_1__AuthReducer___default.a;
     }
 }));
 
 /***/ }),
-/* 67 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LibraryList_json__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__LibraryList_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__LibraryList_json__);
-
-
-/* unused harmony default export */ var _unused_webpack_default_export = (function () {
-  return __WEBPACK_IMPORTED_MODULE_0__LibraryList_json___default.a;
-});
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports) {
-
-module.exports = [{"id":0,"title":"Webpack","description":"Webpack is a module bundler. It packs CommonJs/AMD modules i. e. for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand."},{"id":1,"title":"React","description":"React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes."},{"id":2,"title":"Redux","description":"Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test."},{"id":3,"title":"React-Redux","description":"React-Redux is the official set of bindings between the React and Redux libraries. With this library you can keep your views and data in sync."},{"id":4,"title":"Lodash","description":"A modern JavaScript utility library delivering modularity, performance, & extras. Lodash is released under the MIT license & supports modern environments."},{"id":5,"title":"Redux-Thunk","description":"Redux Thunk middleware allows you to write action creators that return a function instead of an action. The thunk can be used to delay the dispatch of an action, or to dispatch only if a certain condition is met."},{"id":6,"title":"ESLint","description":"ESLint is an open source JavaScript linting utility originally created by Nicholas C. Zakas in June 2013. Code linting is a type of static analysis that is frequently used to find problematic patterns or code that doesn't adhere to certain style guidelines."},{"id":7,"title":"Babel","description":"Babel has support for the latest version of JavaScript through syntax transformers. These plugins allow you to use new syntax, right now without waiting for browser support."},{"id":8,"title":"Axios","description":"Promise based HTTP client for the browser and node.js. With Axios, you can make XMLHttpRequests from the browser or Node with the full Promise Api."}]
-
-/***/ }),
+/* 67 */,
+/* 68 */,
 /* 69 */,
 /* 70 */
 /***/ (function(module, exports) {
@@ -33037,6 +34706,334 @@ var Contact = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (Contact);
+
+/***/ }),
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions__ = __webpack_require__(276);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Login = function (_Component) {
+	_inherits(Login, _Component);
+
+	function Login() {
+		_classCallCheck(this, Login);
+
+		return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
+	}
+
+	_createClass(Login, [{
+		key: 'onEmailChange',
+		value: function onEmailChange(text) {
+			console.log('achin');
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'section',
+				{ className: 'login_box_area section_gap' },
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+					'div',
+					{ className: 'container' },
+					__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+						'div',
+						{ className: 'row' },
+						__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+							'div',
+							{ className: 'col-lg-12' },
+							__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+								'div',
+								{ className: 'login_form_inner' },
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'h3',
+									null,
+									'Log in to enter'
+								),
+								__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+									'form',
+									{ className: 'row login_form', action: 'contact_process.php', method: 'post', id: 'contactForm', noValidate: 'novalidate' },
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'col-md-12 form-group' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.onEmailChange.bind(this), className: 'form-control', id: 'name', name: 'name', placeholder: 'Username', onFocus: 'this.placeholder = \'\'', onBlur: 'this.placeholder = \'Username\'' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'col-md-12 form-group' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'password', name: 'password', placeholder: 'Password', onFocus: 'this.placeholder = \'\'', onBlur: 'this.placeholder = \'Password\'' })
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'col-md-12 form-group' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'div',
+											{ className: 'creat_account' },
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'checkbox', id: 'f-option2', name: 'selector' }),
+											__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+												'label',
+												{ htmlFor: 'f-option2' },
+												'Keep me logged in'
+											)
+										)
+									),
+									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+										'div',
+										{ className: 'col-md-12 form-group' },
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'button',
+											{ type: 'submit', value: 'submit', className: 'primary-btn' },
+											'Log In'
+										),
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+											'a',
+											{ href: '#' },
+											'Forgot Password?'
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Login;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(null, { emailChanged: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* emailChanged */] })(Login));
+
+/***/ }),
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return emailChanged; });
+var emailChanged = function emailChanged(text) {
+            return {
+                        type: 'email_changed',
+                        payload: text
+            };
+};
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports) {
+
+
 
 /***/ })
 /******/ ]);
