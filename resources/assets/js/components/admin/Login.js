@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { emailChanged } from '../../actions';
+import { emailChanged, passwordChanged } from '../../actions';
 
 class Login extends Component {
     onEmailChange(text)
     {
-            console.log('achin');
+        this.props.emailChanged(text);
+    }
+
+    onPasswordChange(text)
+    {
+        this.props.passwordChanged(text);
     }
   
     render() {
@@ -21,11 +26,11 @@ class Login extends Component {
 						<form className="row login_form" action="contact_process.php" method="post" id="contactForm" noValidate="novalidate">
 							
                             <div className="col-md-12 form-group">
-								<input type="text" onChange={this.onEmailChange.bind(this)} className="form-control" id="name" name="name" placeholder="Username" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Username'" />
+								<input type="text" onChange={this.onEmailChange.bind(this)} value={this.props.email} className="form-control" id="name" name="name" placeholder="Username" />
 							</div>
 
 							<div className="col-md-12 form-group">
-								<input type="text" className="form-control" id="password" name="password" placeholder="Password" onFocus="this.placeholder = ''" onBlur="this.placeholder = 'Password'" />
+								<input type="text" onChange={this.onPasswordChange.bind(this)} value={this.props.password} className="form-control" id="password" name="password" placeholder="Password" />
 							</div>
 
 							<div className="col-md-12 form-group">
@@ -49,4 +54,16 @@ class Login extends Component {
    );
 }
 }
-export default connect(null, { emailChanged })(Login);
+
+const mapStateToProps = state => {
+    console.log('1');
+    console.log(state);
+    console.log('2');
+return {
+    email: state.auth.email,
+    password: state.auth.password
+};
+};
+
+
+export default connect(mapStateToProps, { emailChanged, passwordChanged })(Login);

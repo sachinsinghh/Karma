@@ -34590,13 +34590,12 @@ module.exports = Array.isArray || function (arr) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AuthReducer__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__AuthReducer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__AuthReducer__);
 
 
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["b" /* combineReducers */])({
     auth: function auth() {
-        return __WEBPACK_IMPORTED_MODULE_1__AuthReducer___default.a;
+        return __WEBPACK_IMPORTED_MODULE_1__AuthReducer__["a" /* default */];
     }
 }));
 
@@ -34802,7 +34801,12 @@ var Login = function (_Component) {
 	_createClass(Login, [{
 		key: 'onEmailChange',
 		value: function onEmailChange(text) {
-			console.log('achin');
+			this.props.emailChanged(text);
+		}
+	}, {
+		key: 'onPasswordChange',
+		value: function onPasswordChange(text) {
+			this.props.passwordChanged(text);
 		}
 	}, {
 		key: 'render',
@@ -34833,12 +34837,12 @@ var Login = function (_Component) {
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'div',
 										{ className: 'col-md-12 form-group' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.onEmailChange.bind(this), className: 'form-control', id: 'name', name: 'name', placeholder: 'Username', onFocus: 'this.placeholder = \'\'', onBlur: 'this.placeholder = \'Username\'' })
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.onEmailChange.bind(this), value: this.props.email, className: 'form-control', id: 'name', name: 'name', placeholder: 'Username' })
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'div',
 										{ className: 'col-md-12 form-group' },
-										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', id: 'password', name: 'password', placeholder: 'Password', onFocus: 'this.placeholder = \'\'', onBlur: 'this.placeholder = \'Password\'' })
+										__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', onChange: this.onPasswordChange.bind(this), value: this.props.password, className: 'form-control', id: 'password', name: 'password', placeholder: 'Password' })
 									),
 									__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 										'div',
@@ -34880,7 +34884,17 @@ var Login = function (_Component) {
 	return Login;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(null, { emailChanged: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* emailChanged */] })(Login));
+var mapStateToProps = function mapStateToProps(state) {
+	console.log('1');
+	console.log(state);
+	console.log('2');
+	return {
+		email: state.auth.email,
+		password: state.auth.password
+	};
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(mapStateToProps, { emailChanged: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* emailChanged */], passwordChanged: __WEBPACK_IMPORTED_MODULE_2__actions__["b" /* passwordChanged */] })(Login));
 
 /***/ }),
 /* 142 */,
@@ -35022,18 +35036,62 @@ var Login = function (_Component) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return emailChanged; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return passwordChanged; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__types__ = __webpack_require__(278);
+
+
 var emailChanged = function emailChanged(text) {
-            return {
-                        type: 'email_changed',
-                        payload: text
-            };
+    return {
+        type: __WEBPACK_IMPORTED_MODULE_0__types__["a" /* EMAIL_CHANGED */],
+        payload: text
+    };
+};
+
+var passwordChanged = function passwordChanged(text) {
+    return {
+        type: __WEBPACK_IMPORTED_MODULE_0__types__["b" /* PASSWORD_CHANGED */],
+        payload: text
+    };
 };
 
 /***/ }),
 /* 277 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actions_types__ = __webpack_require__(278);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
+
+var INITIAL_STATE = { email: '', password: '' };
+console.log('12');
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+    var action = arguments[1];
+
+    console.log('sachin singh');
+    switch (action.type) {
+
+        case __WEBPACK_IMPORTED_MODULE_0__actions_types__["a" /* EMAIL_CHANGED */]:
+            return _extends({}, state, { email: action.payload });
+
+        case __WEBPACK_IMPORTED_MODULE_0__actions_types__["b" /* PASSWORD_CHANGED */]:
+            return _extends({}, state, { password: action.payload });
+        default:
+            return state;
+    }
+});
+
+/***/ }),
+/* 278 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EMAIL_CHANGED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PASSWORD_CHANGED; });
+var EMAIL_CHANGED = 'email_changed';
+var PASSWORD_CHANGED = 'password_changed';
 
 /***/ })
 /******/ ]);
