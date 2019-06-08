@@ -1,16 +1,51 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { emailChanged, passwordChanged } from '../../actions';
+import { Alert } from 'react-bootstrap';
+import Loader from 'react-loader-spinner'
+import { emailChanged, passwordChanged, loginUser } from '../../actions';
 
 class Login extends Component {
     onEmailChange(text)
     {
-        this.props.emailChanged(text);
+        this.props.emailChanged(text.target.value);
     }
 
     onPasswordChange(text)
     {
-        this.props.passwordChanged(text);
+        this.props.passwordChanged(text.target.value);
+    }
+
+    onButtonPress(text)
+    {
+        const { email, password } = this.props;
+        this.props.loginUser({ email, password });
+       
+    }
+
+    renderError()
+    {
+        if (this.props.error)
+        {
+            return (
+               <Alert variant='danger'>{this.props.error}</Alert>
+            );
+        }
+    }
+
+    renderButton()
+    {
+        if (this.props.loading)
+        {
+            return (<Loader 
+                type="Puff"
+                color="#ff6c00"
+                height="50"	
+                width="50"
+            />);
+        }
+        return (
+            <button type="button" value="submit" onClick={this.onButtonPress.bind(this)} className="primary-btn">Log In</button>
+        )
     }
   
     render() {
@@ -22,8 +57,9 @@ class Login extends Component {
 
 				<div className="col-lg-12">
 					<div className="login_form_inner">
+                    {this.renderError()}
 						<h3>Log in to enter</h3>
-						<form className="row login_form" action="contact_process.php" method="post" id="contactForm" noValidate="novalidate">
+						<form className="row login_form" >
 							
                             <div className="col-md-12 form-group">
 								<input type="text" onChange={this.onEmailChange.bind(this)} value={this.props.email} className="form-control" id="name" name="name" placeholder="Username" />
@@ -41,8 +77,10 @@ class Login extends Component {
 								</div>
 
 							</div>
+                            
 							<div className="col-md-12 form-group">
-								<button type="submit" value="submit" className="primary-btn">Log In</button>
+                                    {this.renderButton()}
+								
 								<a href="#">Forgot Password?</a>
 							</div>
 						</form>
@@ -56,14 +94,16 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('1');
-    console.log(state);
-    console.log('2');
+    console.log('mapstate start');
+    console.log(state.auth);
+    console.log('mapstate end');
 return {
     email: state.auth.email,
-    password: state.auth.password
+    password: state.auth.password,
+    error: state.auth.error,
+    loading: state.auth.loading
 };
 };
 
 
-export default connect(mapStateToProps, { emailChanged, passwordChanged })(Login);
+export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser })(Login);
