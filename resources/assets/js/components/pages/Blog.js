@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 
 class Blog extends Component {
+
+    componentDidMount()
+    {
+        console.log('insdie blog');
+        console.log(this.props);
+    }
     render() {
         return (
             <div>

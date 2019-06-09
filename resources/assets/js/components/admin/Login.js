@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 import Loader from 'react-loader-spinner'
 import { emailChanged, passwordChanged, loginUser } from '../../actions';
 
 class Login extends Component {
+
+    componentDidMount()
+    {
+        console.log('inside component did mount');
+        console.log(this.props);
+    }
     onEmailChange(text)
     {
         this.props.emailChanged(text.target.value);
@@ -17,9 +24,9 @@ class Login extends Component {
 
     onButtonPress(text)
     {
+    
         const { email, password } = this.props;
         this.props.loginUser({ email, password });
-       
     }
 
     renderError()
@@ -47,10 +54,19 @@ class Login extends Component {
             <button type="button" value="submit" onClick={this.onButtonPress.bind(this)} className="primary-btn">Log In</button>
         )
     }
+    
   
     render() {
+        let authRedirect = null;
+        if (this.props.isAuthenticated)
+        {
+            authRedirect = <Redirect to='/' />;
+        }
         return (
+           <div>
+               {authRedirect}
             <section className="login_box_area section_gap">
+            
 		<div className="container">
 			<div className="row">
 
@@ -89,6 +105,7 @@ class Login extends Component {
 			</div>
 		</div>
 	</section>
+    </div> 
    );
 }
 }
@@ -101,7 +118,8 @@ return {
     email: state.auth.email,
     password: state.auth.password,
     error: state.auth.error,
-    loading: state.auth.loading
+    loading: state.auth.loading,
+    isAuthenticated: state.auth.token !== null
 };
 };
 

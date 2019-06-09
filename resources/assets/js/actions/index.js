@@ -1,9 +1,11 @@
 import axios from 'axios';
+import { history } from 'react-router-dom';
 import { EMAIL_CHANGED,
      PASSWORD_CHANGED,
       LOGIN_USER_FAIL,
       LOGIN_USER_SUCCESS,
     LOGIN_USER } from './types';
+
 
 
 export const emailChanged = (text) => {
@@ -40,7 +42,8 @@ const loginUserFail = (dispatch) => {
      if (user.data.error_code === 1) {
        loginUserFail();
      }
-   
+      console.log('will redirect page from here');
+    
     dispatch({
       type: LOGIN_USER_SUCCESS,
       payload: user

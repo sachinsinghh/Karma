@@ -4,7 +4,7 @@ import { EMAIL_CHANGED,
      LOGIN_USER,
     LOGIN_USER_FAIL } from '../actions/types';
 
-const INITIAL_STATE = { email: '', password: '', loading: false, user: null };
+const INITIAL_STATE = { email: '', password: '', loading: false, user: null, token: null };
 
 
 export default (state = INITIAL_STATE, action) => {
@@ -22,6 +22,7 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, loading: true, error: '' };
 
             case LOGIN_USER_SUCCESS:
+            console.log(action.payload.data.token);
             return {
             ...state,
             //[action.payload.user]: action.payload,
@@ -29,11 +30,12 @@ export default (state = INITIAL_STATE, action) => {
             error: '',
             loading: false,
             email: '',
-            password: '' };
+            password: '',
+            token: action.payload.data.token };
 
             case LOGIN_USER_FAIL:
-            console.log('fail');
-            return { ...state, error: 'Authentication Failed.', password: '', loading: false }; 
+           
+            return { ...state, error: 'Authentication Failed.', password: '', loading: false, token: null }; 
 
             default:
             return state;
