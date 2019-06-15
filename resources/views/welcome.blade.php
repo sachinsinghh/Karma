@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="{{asset('css/ion.rangeSlider.skinFlat.css')}}" />
 	<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 	<link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+
     </head>
     <body>
     <div id="App">
@@ -45,6 +47,9 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="{{asset('/js/gmaps.min.js')}}"></script>
 	<script src="{{asset('/js/main.js')}}"></script>
+	
+
+
     </body>
  
 </html>

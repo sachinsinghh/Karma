@@ -14,25 +14,33 @@ import Home from './components/pages/Home';
 import Blog from './components/pages/Blog';
 import Contact from './components/pages/Contact';
 import Login from './components/admin/Login';
+import Dashboard from './components/admin/Dashboard';
+import NotFound from './components/pages/NotFound';
 
 export default class App extends Component {
     render() {
+	
 		const store = createStore(reducers, {}, applyMiddleware(Reduxthunk));
         return (
 			
 			<Provider store={store}>
 			<BrowserRouter>
-            <div className="App"> 
+           
 			
 			<Header />
 			
-					 <Switch>	 
-					 <Route path="/" exact component={Home} /> 
-					 <Route path="/blog" component={Blog} />
-					 <Route path="/contact" component={Contact} />	
-					 <Route path="/admin" component={Login} /> 
-					 </Switch>
-            </div>
+			 <Switch>	 
+			 <Route path="/" exact component={Home} /> 
+	 <Route path="/blog" component={Blog} />
+	 <Route path="/contact" component={Contact} />	
+	 <Route path="/admin" component={Login} />
+	 <Route path="/Dashboard" component={Dashboard} /> 
+	 <Route path="/adminDashboard" component={Dashboard} /> 
+	 <Route component={NotFound} /> 
+	
+	 </Switch>
+					
+       
 			</BrowserRouter>
 			</Provider>	
 			

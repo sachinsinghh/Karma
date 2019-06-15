@@ -2,11 +2,14 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
+import Footer from './Footer';
 import Home from './pages/Home';
 import Blog from './pages/Blog';
-import Footer from './Footer';
-import Test1 from '../components/Footer';
+import Contact from './pages/Contact';
+import Login from './admin/Login';
+import Dashboard from './admin/Dashboard';
+
 
 class Header extends Component {
 
@@ -15,7 +18,7 @@ class Header extends Component {
 	}
     render() {
         return (
-					
+				<div>
                 <header className="header_area sticky-header">
 		<div className="main_menu">
 			<nav className="navbar navbar-expand-lg navbar-light main_box">
@@ -83,6 +86,8 @@ href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="butto
 			</div>
 		</div>
 	</header>   
+	 
+	 </div>
 
         );
     }

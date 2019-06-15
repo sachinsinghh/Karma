@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Header from '../Header';
 import Slider from '../Slider';
 import Facility from '../Facility';
 import Caraousel from '../Caraousel';
@@ -9,7 +10,7 @@ class Home extends Component {
    
     render() {
         return (
-        
+		
             <div>  
             <section className="banner-area">
 <div className="container">
