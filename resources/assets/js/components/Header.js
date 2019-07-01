@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, Switch } from 'react-router-dom';
 import Footer from './Footer';
-import Home from './pages/Home';
+import FrontHome from './pages/FrontHome';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Login from './admin/Login';
@@ -66,26 +66,19 @@ href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="butto
 							</li>
 							<li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
 						</ul>
-						<ul className="nav navbar-nav navbar-right">
-							<li className="nav-item"><a href="#" className="cart"><span className="ti-bag" /></a></li>
-							<li className="nav-item">
-								<button className="search"><span className="lnr lnr-magnifier" id="search" /></button>
-							</li>
-						</ul>
+						
 					</div>
 				</div>
 			</nav>
 		</div>
-		<div className="search_input" id="search_input_box">
-			<div className="container">
-				<form className="d-flex justify-content-between">
-					<input type="text" className="form-control" id="search_input" placeholder="Search Here" />
-					<button type="submit" className="btn" />
-					<span className="lnr lnr-cross" id="close_search" title="Close Search" />
-				</form>
-			</div>
-		</div>
+		
 	</header>   
+	<Switch>
+			<Route path="/blog" component={Blog} />
+			<Route path="/contact" component={Contact} />
+			<Route path="/" component={FrontHome} /> 
+			
+			</Switch>
 	 
 	 </div>
 

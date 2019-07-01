@@ -8,39 +8,31 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import Reduxthunk from 'redux-thunk';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header';
 import reducers from './reducers';
 import Home from './components/pages/Home';
-import Blog from './components/pages/Blog';
-import Contact from './components/pages/Contact';
-import Login from './components/admin/Login';
 import Dashboard from './components/admin/Dashboard';
+import Login from './components/admin/Login';
 import NotFound from './components/pages/NotFound';
+import Header from './components/Header';
 
 export default class App extends Component {
-    render() {
 	
+
+    render() {
 		const store = createStore(reducers, {}, applyMiddleware(Reduxthunk));
         return (
 			
 			<Provider store={store}>
 			<BrowserRouter>
-           
 			
-			<Header />
-			
-			 <Switch>	 
-			 <Route path="/" exact component={Home} /> 
-	 <Route path="/blog" component={Blog} />
-	 <Route path="/contact" component={Contact} />	
-	 <Route path="/admin" component={Login} />
-	 <Route path="/Dashboard" component={Dashboard} /> 
-	 <Route path="/adminDashboard" component={Dashboard} /> 
-	 <Route component={NotFound} /> 
-	
-	 </Switch>
-					
-       
+			 <Switch>	
+			 
+			 <Route path="/Login" exact component={Login} />
+			 <Route path="/admin" component={Dashboard} /> 
+			 <Route path="/" component={Header} /> 
+			 
+			<Route component={NotFound} /> 
+			</Switch>
 			</BrowserRouter>
 			</Provider>	
 			

@@ -15,7 +15,7 @@ import Home from '../pages/Home';
 
 export const mainListItems = (
   <div>
-    <Link to="/adminDashboard">
+    <Link to="/admin/dashboard">
     <ListItem button>
       <ListItemIcon>
         <DashboardIcon />
@@ -23,7 +23,7 @@ export const mainListItems = (
       <ListItemText primary="Dashboard" />
     </ListItem>
     </Link>
-    <Link to="/dashboard/slider">
+    <Link to="/admin/slider">
     <ListItem button>
       <ListItemIcon>
         <ShoppingCartIcon />
@@ -49,8 +49,7 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Integrations" />
     </ListItem>
-    <Switch>	 
-</Switch>
+ 
   </div>
   
 );

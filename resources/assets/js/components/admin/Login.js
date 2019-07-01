@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
-import Loader from 'react-loader-spinner'
+import Loader from 'react-loader-spinner';
 import { emailChanged, passwordChanged, loginUser } from '../../actions';
+import { bindActionCreators } from 'redux';
 
 class Login extends Component {
 
@@ -60,7 +61,7 @@ class Login extends Component {
         let authRedirect = null;
         if (this.props.isAuthenticated)
         {
-            authRedirect = <Redirect to='/admin/Dashboard' />;
+            authRedirect = <Redirect to='/admin' />;
         }
         return (
            <div>
@@ -111,9 +112,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('mapstate start');
-    console.log(state.auth);
-    console.log('mapstate end');
+
 return {
     email: state.auth.email,
     password: state.auth.password,
@@ -123,5 +122,12 @@ return {
 };
 };
 
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        emailChanged,
+        passwordChanged,
+         loginUser
+    }, dispatch);
+}
 
-export default connect(mapStateToProps, { emailChanged, passwordChanged, loginUser })(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

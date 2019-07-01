@@ -24,6 +24,7 @@ import Deposits from './Deposits';
 import Orders from './Orders';
 import AdminDashboard from '../pages/AdminHome';
 import Slider from '../pages/Slider';
+import AdminHome from '../pages/AdminHome';
 
 function MadeWithLove() {
   return (
@@ -121,6 +122,7 @@ const useStyles = makeStyles(theme => ({
 export default function Dashboard() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -174,14 +176,15 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
+      
         <Switch>
-        <Route path="/dashboard/slider" component={Slider} />
-        <Route path="/adminDashboard" component={AdminDashboard} /> 
+        <Route path="/admin" exact component={AdminHome} />
+        <Route path="/admin/slider" exact component={Slider} />
    </Switch>
-         
         </Container>
-        <MadeWithLove />
+    
       </main>
+      
       
     </div>
   );

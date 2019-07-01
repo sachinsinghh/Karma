@@ -2,10 +2,10 @@ import axios from 'axios';
 import { EMAIL_CHANGED,
      PASSWORD_CHANGED,
       LOGIN_USER_FAIL,
-      LOGIN_USER_SUCCESS,
+      LOGIN_USER_SUCCESS, 
+      ADD_SLIDER,
+      SLIDER_NAME,
     LOGIN_USER } from './types';
-
-
 
 export const emailChanged = (text) => {
             return {
@@ -19,6 +19,20 @@ export const passwordChanged = (text) => {
     type: PASSWORD_CHANGED,
     payload: text
     };
+};
+
+export const addSlider = (text) => {
+  return {
+    type: ADD_SLIDER,
+    payload: text
+  };
+};
+
+export const sliderName = (text) => {
+  return {
+    type: SLIDER_NAME,
+    payload: text
+  };
 };
 
 export const loginUser = ({ email, password }) => {
