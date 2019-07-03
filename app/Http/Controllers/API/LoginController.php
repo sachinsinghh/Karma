@@ -37,18 +37,15 @@ class LoginController extends Controller
     {
     	$sliderName = $request->name;
     	$sliderImage = $request->image;
-
-
     	$img = str_replace('data:image/jpeg;base64,','', $sliderImage);
     	$img = str_replace(' ','+', $img);
-
-    	// file_put_contents(public_path(), base64_decode($img));
-    	//  $path = public_path().'/yourfolder';
-     // $uplaod = $file->move($path,$fileName);
-    	// return "test---".$img;
-
+    		
+            $fileName = uniqid().'.jpg';
+    	file_put_contents(public_path().'/slider/'.$fileName, base64_decode($img));
+    	
+        $image = '/slider/'.$fileName;
     	try {
-    		DB::table('sliders')->insert( ['slider_name' => $sliderName, 'image' => $sliderImage]);
+    		DB::table('sliders')->insert( ['slider_name' => $sliderName, 'image' => $image]);
     		return response()->json(['success'=>'Slider Added successfully','status'=>200]);
     	} catch (Exception $e) {
     		

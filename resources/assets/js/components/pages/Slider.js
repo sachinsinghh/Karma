@@ -17,6 +17,7 @@ class Slider extends Component {
         let reader = new FileReader();
         reader.readAsDataURL(files[0]);
         reader.onload = (text) => {
+            console.log(text.target.result);
             this.props.sliderImage(text.target.result);
         }
 

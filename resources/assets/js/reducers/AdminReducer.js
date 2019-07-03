@@ -8,16 +8,15 @@ export default (state = INITIAL_STATE, action) => {
        
             
         case SLIDER_NAME:
-        return { ...state, sliderName: action.payload };
+        return { ...state, sliderName: action.payload, error: '' };
 
         case SLIDER_IMAGE:
-        return { ...state, sliderImage: action.payload };
+        return { ...state, sliderImage: action.payload, error: '' };
 
         case ADD_LOADER:
         return { ...state, loading: true, error: '' };
 
         case ADD_SLIDER_FAIL:
-        console.warn('slider fail reducer');
         return { ...state, loading: false, error: action.payload };
         default:
         return state;
