@@ -5,4 +5,7 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 export const ADD_SLIDER = 'add_slider';
 export const SLIDER_NAME = 'slider_name';
-
+export const SLIDER_IMAGE = 'slider_image';
+export const ADD_SLIDER_SUCCESS = 'add_slider_success';
+export const ADD_SLIDER_FAIL = 'add_slider_fail';
+export const ADD_LOADER = 'add_loader';

@@ -22,16 +22,15 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, loading: true, error: '' };
 
             case LOGIN_USER_SUCCESS:
-            console.log(action.payload.data.token);
+          
             return {
             ...state,
-            //[action.payload.user]: action.payload,
             user: action.payload,
             error: '',
             loading: false,
             email: '',
             password: '',
-            token: action.payload.data.token };
+            token: action.payload.data.success.token };
 
             case LOGIN_USER_FAIL:
            

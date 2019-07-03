@@ -23,7 +23,7 @@ class Login extends Component {
         this.props.passwordChanged(text.target.value);
     }
 
-    onButtonPress(text)
+    onButtonPress()
     {
     
         const { email, password } = this.props;
