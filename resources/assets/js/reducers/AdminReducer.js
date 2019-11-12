@@ -1,4 +1,4 @@
-import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER } from '../actions/types';
+import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCCESS } from '../actions/types';
 
 const INITIAL_STATE = { sliderName: '', loading: false };
 
@@ -15,6 +15,9 @@ export default (state = INITIAL_STATE, action) => {
 
         case ADD_LOADER:
         return { ...state, loading: true, error: '' };
+
+        case ADD_SLIDER_SUCCESS:
+        return { ...state, loading: false };
 
         case ADD_SLIDER_FAIL:
         return { ...state, loading: false, error: action.payload };

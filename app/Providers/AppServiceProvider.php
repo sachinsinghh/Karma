@@ -14,6 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        app()->bind('sachin',function(){
+            return "Developer";
+        });
         Schema::defaultStringLength(191);
     }
 

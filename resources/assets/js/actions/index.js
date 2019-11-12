@@ -56,6 +56,7 @@ export const sliderImage = (text) => {
 };
 
 export const loginUser = ({ email, password }) => {
+  
     return (dispatch) => {
         dispatch({ type: LOGIN_USER });
        axios.post('http://127.0.0.1:8000/api/login', {
@@ -68,6 +69,7 @@ export const loginUser = ({ email, password }) => {
 };
 
 const loginUserFail = (dispatch) => {
+  
     dispatch({ type: LOGIN_USER_FAIL });
   };
   

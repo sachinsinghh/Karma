@@ -10,6 +10,39 @@ use DB;
 
 class LoginController extends Controller
 {
+
+		public function bind()
+		{
+			$n=6;
+			for($i=0;$i<$n;$i++)
+			{
+				for($j=0;$j<=$i;$j++)
+				{
+					echo "*";
+				}
+				echo "<br/>";
+			}	
+			echo "end";die;
+
+
+			$n = 10;
+			$res = 0;
+			$ch = 0;
+
+			$num1 = 0; 
+    $num2 = 1; 
+  
+    $counter = 0; 
+    while ($counter < $n){ 
+        echo $num1; 
+        $num3 = $num2 + $num1; 
+        $num1 = $num2; 
+        $num2 = $num3; 
+        $counter = $counter + 1; 
+    } 
+
+		}
+
     public function login(Request $request) 
     {
     		$credentials = $request->only('email', 'password');

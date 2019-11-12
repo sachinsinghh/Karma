@@ -10,22 +10,22 @@ class Login extends Component {
 
     componentDidMount()
     {
-        console.log('inside component did mount');
+        console.log('inside component did mount sachin');
         console.log(this.props);
     }
     onEmailChange(text)
-    {
+    { console.log('type email');
         this.props.emailChanged(text.target.value);
     }
 
     onPasswordChange(text)
-    {
+    { console.log('type password');
         this.props.passwordChanged(text.target.value);
     }
 
     onButtonPress()
     {
-    
+        console.log('button press');
         const { email, password } = this.props;
         this.props.loginUser({ email, password });
     }
