@@ -27,6 +27,7 @@ class Slider extends Component {
     {
         const { name, image } = this.props;
         this.props.addSlider({ name, image });
+        console.log('put redirection here');
     }
 
     renderButton()
@@ -63,6 +64,11 @@ class Slider extends Component {
         {
           //  authRedirect = <Redirect to='/login' />;
         }
+        if(this.props.isSubmitted)
+        {
+           
+            authRedirect = <Redirect to='/admin/sliderList' />;
+        }
         return (
             <div>
                 {authRedirect}
@@ -98,7 +104,8 @@ return {
     isAuthenticated: state.auth.token !== null,
     name: state.admin.sliderName,
     token: state.auth.token,
-    image: state.admin.sliderImage
+    image: state.admin.sliderImage,
+    isSubmitted: state.admin.submitted
 };
 };
 export default connect(mapStateToProps, { addSlider, sliderName, sliderImage })(Slider);

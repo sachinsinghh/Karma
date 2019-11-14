@@ -25,6 +25,7 @@ import Orders from './Orders';
 import AdminDashboard from '../pages/AdminHome';
 import Slider from '../pages/Slider';
 import AdminHome from '../pages/AdminHome';
+import SliderList from '../pages/SliderList';
 
 function MadeWithLove() {
   return (
@@ -180,6 +181,7 @@ export default function Dashboard() {
         <Switch>
         <Route path="/admin" exact component={AdminHome} />
         <Route path="/admin/slider" exact component={Slider} />
+        <Route path="/admin/sliderList" exact component={SliderList} />
    </Switch>
         </Container>
     

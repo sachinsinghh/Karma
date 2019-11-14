@@ -8,7 +8,7 @@ export default (state = INITIAL_STATE, action) => {
        
             
         case SLIDER_NAME:
-        return { ...state, sliderName: action.payload, error: '' };
+        return { ...state, sliderName: action.payload, error: '', submitted: false };
 
         case SLIDER_IMAGE:
         return { ...state, sliderImage: action.payload, error: '' };
@@ -17,7 +17,7 @@ export default (state = INITIAL_STATE, action) => {
         return { ...state, loading: true, error: '' };
 
         case ADD_SLIDER_SUCCESS:
-        return { ...state, loading: false };
+        return { ...state, loading: false, submitted: true, savedSuccessSlider: true };
 
         case ADD_SLIDER_FAIL:
         return { ...state, loading: false, error: action.payload };

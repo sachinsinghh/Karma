@@ -25,10 +25,11 @@ export default class App extends Component {
 			<Provider store={store}>
 			<BrowserRouter>
 			
-			 <Switch>	
-			 
+			 <Switch>	 
+
 			 <Route path="/Login" exact component={Login} />
 			 <Route path="/admin" component={Dashboard} /> 
+			 
 			 <Route path="/" component={Header} /> 
 			 
 			<Route component={NotFound} /> 
