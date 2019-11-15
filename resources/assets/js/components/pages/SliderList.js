@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -52,23 +53,54 @@ const useStyles = makeStyles(theme => ({
 
 
 
- function SliderList() {
+ function SliderList(props) {
+   
   const classes = useStyles();
 
-  const [show, setShow] = useState(false);
-  // props.savedSuccessSlider
-  //     ? setShow(false)
-  //     : false
-
-  const handleClose = () => setShow(false);
+  const [show, setShow] = useState(true);
   
 
-  return (
+  const handleClose = () => setShow(false);
+
+  const [adata, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://jsonplaceholder.typicode.com/users').then(json => setData(json.data))
+  }, []);
+
+  useEffect(() => {
+    if (props.savedSuccessSlider === true) {
+      
+      setShow(true);
+    }
+    else
+    {
     
+      setShow(false);
+    }
+
+  }, []);
+
+  const renderTable = () => {
+    return adata.map(user => {
+      return (
+        <tr>
+          <td>{user.name}</td>
+          <td>{user.email}</td>
+          
+        </tr>
+      );
+    });
+  };
+  
+   
+  return (
+     
     <div>
+   
     <Modal style={{ marginTop: 50 }} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Message {this.props.savedSuccessSlider}? 'Yes': 'No'</Modal.Title>
+          <Modal.Title>Message </Modal.Title>
         </Modal.Header>
         <Modal.Body>Slider Added Successfully</Modal.Body>
         <Modal.Footer>
@@ -84,23 +116,11 @@ const useStyles = makeStyles(theme => ({
           <TableRow>
             <StyledTableCell>Dessert (100g serving)</StyledTableCell>
             <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(row => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
+        {renderTable()}
         </TableBody>
       </Table>
     </Paper>
@@ -109,7 +129,7 @@ const useStyles = makeStyles(theme => ({
 }
 
 const mapStateToProps = state => {
-  console.warn('check slider list end', state);
+ 
   return {
       savedSuccessSlider: state.admin.submitted
   };
