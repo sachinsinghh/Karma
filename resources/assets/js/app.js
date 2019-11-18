@@ -30,7 +30,7 @@ export default class App extends Component {
 			 <Route path="/Login" exact component={Login} />
 			 <Route path="/admin" component={Dashboard} /> 
 			 
-			 <Route path="/" component={Header} /> 
+			 <Route path="/" exact component={Header} /> 
 			 
 			<Route component={NotFound} /> 
 			</Switch>

@@ -9,3 +9,4 @@ export const SLIDER_IMAGE = 'slider_image';
 export const ADD_SLIDER_SUCCESS = 'add_slider_success';
 export const ADD_SLIDER_FAIL = 'add_slider_fail';
 export const ADD_LOADER = 'add_loader';
+export const SLIDER_STATUS = 'slider_status';

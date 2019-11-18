@@ -180,9 +180,9 @@ export default function Dashboard() {
       
         <Switch>
         <Route path="/admin" exact component={AdminHome} />
-        <Route path="/admin/slider" exact component={Slider} />
-        <Route path="/admin/sliderList" exact component={SliderList} />
-   </Switch>
+        <Route path="/admin/slider" exact component={SliderList} />
+        <Route path="/admin/addSlider" exact component={Slider} />
+        </Switch>
         </Container>
     
       </main>

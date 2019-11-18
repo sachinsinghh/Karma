@@ -7,6 +7,25 @@ import { addSlider, sliderName, sliderImage } from '../../actions';
 
 class Slider extends Component {
 
+    constructor(props) {
+        console.log('--constructor--');
+        super(props);
+      }
+
+      componentDidMount()
+      {
+          console.log('component did mount');
+      }
+      componentWillMount()
+      {
+          console.log('component will mount');
+      }
+       
+      componentWillUnmount()
+      {
+          console.log('component will unmount');
+      }
+
     onSliderName(text)
     {
             this.props.sliderName(text.target.value);
@@ -26,8 +45,9 @@ class Slider extends Component {
     onButtonPress()
     {
         const { name, image } = this.props;
+        console.log('testing image', name, image);
         this.props.addSlider({ name, image });
-        console.log('put redirection here');
+        
     }
 
     renderButton()
@@ -56,9 +76,11 @@ class Slider extends Component {
                <Alert variant='danger'>{this.props.error}</Alert>
             );
         }
+        
     }
 
     render() {
+        console.log('render');
         let authRedirect = null;
         if (!this.props.isAuthenticated)
         {
@@ -67,7 +89,7 @@ class Slider extends Component {
         if(this.props.isSubmitted)
         {
            
-            authRedirect = <Redirect to='/admin/sliderList' />;
+            authRedirect = <Redirect to='/admin/slider' />;
         }
         return (
             <div>
@@ -97,7 +119,8 @@ class Slider extends Component {
 }
 
 const mapStateToProps = state => {
-console.warn('check reducer end', state);
+    console.log('map state to props of slider', state);
+
 return {
     error: state.admin.error,
     loading: state.admin.loading,

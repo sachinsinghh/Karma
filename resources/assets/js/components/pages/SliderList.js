@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Modal, Button } from 'react-bootstrap';
+import { submitSliderStatus } from '../../actions';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -60,12 +62,15 @@ const useStyles = makeStyles(theme => ({
   const [show, setShow] = useState(true);
   
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    props.submitSliderStatus();
+      setShow(false);
+    };
 
   const [adata, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users').then(json => setData(json.data))
+    axios.get('http://127.0.0.1:8000/api/sliderList').then(json => setData(json.data.result))
   }, []);
 
   useEffect(() => {
@@ -74,8 +79,8 @@ const useStyles = makeStyles(theme => ({
       setShow(true);
     }
     else
-    {
-    
+    { 
+      
       setShow(false);
     }
 
@@ -97,8 +102,12 @@ const useStyles = makeStyles(theme => ({
   return (
      
     <div>
-   
-    <Modal style={{ marginTop: 50 }} show={show} onHide={handleClose}>
+      <Link to="/admin/addSlider">
+        <Button variant="secondary">
+            ADD SLider
+        </Button>
+        </Link>
+            <Modal style={{ marginTop: 50 }} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Message </Modal.Title>
         </Modal.Header>
@@ -111,16 +120,29 @@ const useStyles = makeStyles(theme => ({
         </Modal.Footer>
       </Modal>
     <Paper className={classes.root}>
+    
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
+            <StyledTableCell>Id</StyledTableCell>
+            <StyledTableCell align="right">Slider Name</StyledTableCell>
             
           </TableRow>
         </TableHead>
         <TableBody>
-        {renderTable()}
+       { adata.map(user => {
+         return (
+ <tr key={user.id}>
+   
+ <td>{user.id}</td>
+  <td>{user.slider_name}</td>
+ 
+</tr>
+         );
+       })
+       
+       }
+        
         </TableBody>
       </Table>
     </Paper>
@@ -129,9 +151,10 @@ const useStyles = makeStyles(theme => ({
 }
 
 const mapStateToProps = state => {
+  
  
   return {
       savedSuccessSlider: state.admin.submitted
   };
   };
-  export default connect(mapStateToProps)(SliderList);
+  export default connect(mapStateToProps, { submitSliderStatus })(SliderList);

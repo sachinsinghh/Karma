@@ -1,9 +1,9 @@
-import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCCESS } from '../actions/types';
+import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCCESS, SLIDER_STATUS } from '../actions/types';
 
 const INITIAL_STATE = { sliderName: '', loading: false };
 
 export default (state = INITIAL_STATE, action) => {
-    
+    console.log('singh', action);
     switch (action.type) {
        
             
@@ -15,12 +15,15 @@ export default (state = INITIAL_STATE, action) => {
 
         case ADD_LOADER:
         return { ...state, loading: true, error: '' };
-
+            
         case ADD_SLIDER_SUCCESS:
-        return { ...state, loading: false, submitted: true, savedSuccessSlider: true };
+        return { ...state, loading: false, submitted: true, sliderImage: null, sliderName: null, savedSuccessSlider: true };
 
         case ADD_SLIDER_FAIL:
-        return { ...state, loading: false, error: action.payload };
+        return { ...state, loading: false, error: action.payload, submitted: false };
+
+        case SLIDER_STATUS:
+        return { ...state, submitted: false };
         default:
         return state;
     }

@@ -9,6 +9,7 @@ import { EMAIL_CHANGED,
       ADD_SLIDER_SUCCESS,
       ADD_SLIDER_FAIL,
       ADD_LOADER,
+      SLIDER_STATUS,
     LOGIN_USER } from './types';
 
 export const emailChanged = (text) => {
@@ -27,7 +28,7 @@ export const passwordChanged = (text) => {
 
 export const addSlider = ({ name, image }) => {
 
-
+    
   return (dispatch) => {
     dispatch({ type: ADD_LOADER });
    axios.post('http://127.0.0.1:8000/api/addSlider', {
@@ -55,6 +56,12 @@ export const sliderImage = (text) => {
   };
 };
 
+export const submitSliderStatus = () => {
+  return {
+    type: SLIDER_STATUS
+  };
+};
+
 export const loginUser = ({ email, password }) => {
   
     return (dispatch) => {
@@ -74,6 +81,7 @@ const loginUserFail = (dispatch) => {
   };
   
    const loginUserSuccess = async (dispatch, user) => {
+    
      if (user.data.error) {
        loginUserFail();
      }
@@ -86,19 +94,21 @@ const loginUserFail = (dispatch) => {
   };
 
   const addSliderSuccess = async (dispatch, user) => {
-    console.warn('inside add slider success', user);
-    if (user.data.error) {
+      console.warn('---add slider success---', user.data.status);
+    if (user.data.status === 500) {
       addSliderFail(dispatch, user.data.error);
     }
-    
-   
-   dispatch({
-     type: ADD_SLIDER_SUCCESS,
-     payload: user
-   });
+    else
+    {
+      dispatch({
+        type: ADD_SLIDER_SUCCESS,
+        payload: user
+      });
+    }
  };
 
  const addSliderFail = async (dispatch, error) => {
+      console.log('Triggered add slider fail', error);
   dispatch({
     type: ADD_SLIDER_FAIL,
     payload: error
