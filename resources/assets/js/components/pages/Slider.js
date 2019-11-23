@@ -5,31 +5,42 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { addSlider, sliderName, sliderImage } from '../../actions';
 
-class Slider extends Component {
-
-    constructor(props) {
-        console.log('--constructor--');
-        super(props);
-      }
-
-      componentDidMount()
-      {
-          console.log('component did mount');
-      }
-      componentWillMount()
-      {
-          console.log('component will mount');
-      }
-       
-      componentWillUnmount()
-      {
-          console.log('component will unmount');
-      }
-
-    onSliderName(text)
-    {
-            this.props.sliderName(text.target.value);
+function ValidationMessage(props) {
+    if (!props.valid) {
+      return (
+        <div className='error-msg'>{props.message}</div>
+      );
     }
+    return null;
+  }
+
+class Slider extends Component {
+    
+    
+    constructor(props) {
+        super(props);
+        this.state = { errorMsg: { }, sliderNameValid: false };
+        }
+
+      
+        
+    onSliderName(text)
+    { 
+        this.props.sliderName(text.target.value);
+        if (text.target.value.length < 3) {
+          
+            this.state.sliderNameValid = false;
+         
+            this.state.errorMsg.sliderName = 'Must be at least 3 characters long';
+            
+          }
+          else{
+            this.state.sliderNameValid = true;
+          }
+            
+    }
+
+
     onFileUpload(text)
     {
         let files = text.target.files;
@@ -45,7 +56,7 @@ class Slider extends Component {
     onButtonPress()
     {
         const { name, image } = this.props;
-        console.log('testing image', name, image);
+        
         this.props.addSlider({ name, image });
         
     }
@@ -62,7 +73,7 @@ class Slider extends Component {
             />);
         }
         return (
-            <Button onClick={this.onButtonPress.bind(this)} variant="primary" type="button">
+            <Button disabled={!this.props.name} onClick={this.onButtonPress.bind(this)} variant="primary" type="button">
             Submit
           </Button>   
         );
@@ -82,10 +93,10 @@ class Slider extends Component {
     render() {
         console.log('render');
         let authRedirect = null;
-        if (!this.props.isAuthenticated)
-        {
-          //  authRedirect = <Redirect to='/login' />;
-        }
+        // if (!this.props.isAuthenticated)
+        // {
+        //   //  authRedirect = <Redirect to='/login' />;
+        // }
         if(this.props.isSubmitted)
         {
            
@@ -99,16 +110,14 @@ class Slider extends Component {
   <Form.Group>
     <Form.Label>Slider Name</Form.Label>
     <Form.Control onChange={this.onSliderName.bind(this)} value={this.props.name} type="email" placeholder="Slider Name" />
-   
+    < ValidationMessage valid={this.state.sliderNameValid} message={this.state.errorMsg.sliderName} />
   </Form.Group>
 
   <Form.Group controlId="formBasicPassword">
     <Form.Label>Image</Form.Label>
     <Form.Control type="file" onChange={this.onFileUpload.bind(this)} placeholder="file" />
   </Form.Group>
-  <Form.Group controlId="formBasicChecbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+
   {this.renderButton()}
 </Form>
 </div>
@@ -119,7 +128,6 @@ class Slider extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log('map state to props of slider', state);
 
 return {
     error: state.admin.error,
