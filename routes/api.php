@@ -20,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login','API\LoginController@login');
 Route::post('register','API\LoginController@register');
 Route::post('addSlider','API\LoginController@addSlider');
-Route::get('sliderList','API\LoginController@sliderList');
+Route::post('sliderList','API\LoginController@sliderList');

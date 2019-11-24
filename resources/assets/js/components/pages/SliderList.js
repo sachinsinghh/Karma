@@ -9,7 +9,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { Modal, Button } from 'react-bootstrap';
+import  Delete from '@material-ui/icons/Delete';
+import { Modal, Button, InputGroup, FormControl, Row, Container, Col } from 'react-bootstrap';
 import { submitSliderStatus } from '../../actions';
 
 const StyledTableCell = withStyles(theme => ({
@@ -22,25 +23,9 @@ const StyledTableCell = withStyles(theme => ({
   },
 }))(TableCell);
 
-const StyledTableRow = withStyles(theme => ({
-  root: {
-    '&:nth-of-type(odd)': {
-      backgroundColor: theme.palette.background.default,
-    },
-  },
-}))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,6 +45,9 @@ const useStyles = makeStyles(theme => ({
   const classes = useStyles();
 
   const [show, setShow] = useState(true);
+  const [id, setid] = useState(true);
+
+  const [search, setSearch] = useState('');
   
 
   const handleClose = () => {
@@ -67,13 +55,26 @@ const useStyles = makeStyles(theme => ({
       setShow(false);
     };
 
+   const onSearch = (e) => {
+    
+    setSearch(e.target.value);
+  };
+
+  
   const [adata, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/sliderList').then(json => setData(json.data.result))
-  }, []);
+   
+    axios.post('http://127.0.0.1:8000/api/sliderList', { search })
+      .then(res => {
+        setData(res.data.result);
+      });
+
+  }, [search]);
 
   useEffect(() => {
+    
+  
     if (props.savedSuccessSlider === true) {
       
       setShow(true);
@@ -84,29 +85,37 @@ const useStyles = makeStyles(theme => ({
       setShow(false);
     }
 
-  }, []);
+  },[]);
 
-  const renderTable = () => {
-    return adata.map(user => {
-      return (
-        <tr>
-          <td>{user.name}</td>
-          <td>{user.email}</td>
-          
-        </tr>
-      );
-    });
-  };
-  
-   
+
   return (
      
     <div>
+      
+       <Container>
+       <Row>
+    <Col>
       <Link to="/admin/addSlider">
         <Button variant="secondary">
-            ADD SLider
+            Add Slider
         </Button>
-        </Link>
+
+        </Link></Col>
+    <Col></Col>
+    <Col><InputGroup>
+   
+   <FormControl
+     aria-label="Default"
+     name="search"
+     onChange={onSearch}
+     placeholder="Search"
+    
+   />
+ </InputGroup></Col>
+  </Row>
+</Container>
+    
+       
             <Modal style={{ marginTop: 50 }} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Message </Modal.Title>
@@ -124,18 +133,22 @@ const useStyles = makeStyles(theme => ({
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Id</StyledTableCell>
-            <StyledTableCell align="right">Slider Name</StyledTableCell>
+            <StyledTableCell align="left">Id</StyledTableCell>
+            <StyledTableCell align="left">Slider Name</StyledTableCell>
+            <StyledTableCell align="left">Action</StyledTableCell>
             
           </TableRow>
         </TableHead>
         <TableBody>
        { adata.map(user => {
+        
          return (
  <tr key={user.id}>
    
  <td>{user.id}</td>
   <td>{user.slider_name}</td>
+  <td><Delete /></td>
+  
  
 </tr>
          );

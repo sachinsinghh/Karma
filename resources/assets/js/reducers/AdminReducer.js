@@ -3,7 +3,7 @@ import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCC
 const INITIAL_STATE = { sliderName: '', loading: false };
 
 export default (state = INITIAL_STATE, action) => {
-    console.log('singh', action);
+    
     switch (action.type) {
        
             

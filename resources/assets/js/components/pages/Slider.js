@@ -22,8 +22,7 @@ class Slider extends Component {
         this.state = { errorMsg: { }, sliderNameValid: false };
         }
 
-      
-        
+  
     onSliderName(text)
     { 
         this.props.sliderName(text.target.value);
@@ -47,7 +46,7 @@ class Slider extends Component {
         let reader = new FileReader();
         reader.readAsDataURL(files[0]);
         reader.onload = (text) => {
-            console.log(text.target.result);
+            
             this.props.sliderImage(text.target.result);
         }
 
@@ -91,7 +90,7 @@ class Slider extends Component {
     }
 
     render() {
-        console.log('render');
+       
         let authRedirect = null;
         // if (!this.props.isAuthenticated)
         // {

@@ -94,7 +94,7 @@ const loginUserFail = (dispatch) => {
   };
 
   const addSliderSuccess = async (dispatch, user) => {
-      console.warn('---add slider success---', user.data.status);
+    
     if (user.data.status === 500) {
       addSliderFail(dispatch, user.data.error);
     }
@@ -108,7 +108,7 @@ const loginUserFail = (dispatch) => {
  };
 
  const addSliderFail = async (dispatch, error) => {
-      console.log('Triggered add slider fail', error);
+     
   dispatch({
     type: ADD_SLIDER_FAIL,
     payload: error

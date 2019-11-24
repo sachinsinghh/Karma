@@ -66,10 +66,20 @@ class LoginController extends Controller
     	return response()->json(['success'=>'Registerd successfully']);
 	}
 	
-	public function sliderList()
+	public function sliderList(Request $request)
 	{
-		$slider = DB::table('sliders')->get();
+		
+		if(empty(trim($request->search)))
+		{
+			$slider = DB::table('sliders')->get();
 		return response()->json(['result'=>$slider,'status'=>200]);
+		}
+		else
+		{
+			$slider = DB::table('sliders')->where('slider_name', 'like', "%".$request->search."%")->get();
+		return response()->json(['result'=>$slider,'status'=>200]);
+		}
+		
 	}
 
     public function addSlider(Request $request)
