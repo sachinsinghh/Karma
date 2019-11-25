@@ -47,6 +47,7 @@ const useStyles = makeStyles(theme => ({
   const [show, setShow] = useState(true);
   const [id, setid] = useState(true);
   const [del, setDel] = useState(false);
+  const [delId, setdelId] = useState();
 
   const [search, setSearch] = useState('');
   
@@ -57,17 +58,20 @@ const useStyles = makeStyles(theme => ({
     };
 
     const handleCloseDelete = (e) => {
-
+      axios.delete(`http://127.0.0.1:8000/api/sliderDelete/${delId}`)
+      .then(res => {
+      
+       setData(res.data.result);
+      });
+      
       setDel(false);
       };
 
       const handleCloseNo = () => {
-     
         setDel(false);
         };
 
    const onSearch = (e) => {
-    
     setSearch(e.target.value);
   };
 
@@ -75,7 +79,6 @@ const useStyles = makeStyles(theme => ({
   const [adata, setData] = useState([]);
 
   useEffect(() => {
-   
     axios.post('http://127.0.0.1:8000/api/sliderList', { search })
       .then(res => {
         setData(res.data.result);
@@ -84,8 +87,7 @@ const useStyles = makeStyles(theme => ({
   }, [search]);
 
   useEffect(() => {
-    
-  
+   
     if (props.savedSuccessSlider === true) {
       
       setShow(true);
@@ -100,9 +102,12 @@ const useStyles = makeStyles(theme => ({
 
   
  const onDelete = (e) => {
+  setdelId(e);
   setDel(true);
  };
 
+
+  
 
   return (
      

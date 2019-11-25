@@ -55,7 +55,16 @@ class LoginController extends Controller
     	{
     		return response()->json(['error'=>'Unauthorized',401]);
     	}
-    }
+	}
+	
+	public function delete(Request $request, $id)
+	{
+		
+		DB::table('sliders')->where('id',$id)->delete();
+		$slider = DB::table('sliders')->get();
+		return response()->json(['result'=>$slider,'success'=>'Deleted successfully','status'=>200]);
+	
+	}
 
     public function register(Request $request)
     {
