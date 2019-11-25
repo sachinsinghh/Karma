@@ -46,6 +46,7 @@ const useStyles = makeStyles(theme => ({
 
   const [show, setShow] = useState(true);
   const [id, setid] = useState(true);
+  const [del, setDel] = useState(false);
 
   const [search, setSearch] = useState('');
   
@@ -54,6 +55,16 @@ const useStyles = makeStyles(theme => ({
     props.submitSliderStatus();
       setShow(false);
     };
+
+    const handleCloseDelete = (e) => {
+
+      setDel(false);
+      };
+
+      const handleCloseNo = () => {
+     
+        setDel(false);
+        };
 
    const onSearch = (e) => {
     
@@ -87,6 +98,11 @@ const useStyles = makeStyles(theme => ({
 
   },[]);
 
+  
+ const onDelete = (e) => {
+  setDel(true);
+ };
+
 
   return (
      
@@ -114,6 +130,22 @@ const useStyles = makeStyles(theme => ({
  </InputGroup></Col>
   </Row>
 </Container>
+
+<Modal style={{ marginTop: 50 }} show={del} onHide={handleCloseDelete}>
+        <Modal.Header closeButton>
+          <Modal.Title>Message </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you Sure?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseDelete}>
+            Yes
+          </Button>
+          <Button variant="secondary" onClick={handleCloseNo}>
+            No
+          </Button>
+         
+        </Modal.Footer>
+      </Modal>
     
        
             <Modal style={{ marginTop: 50 }} show={show} onHide={handleClose}>
@@ -147,7 +179,7 @@ const useStyles = makeStyles(theme => ({
    
  <td>{user.id}</td>
   <td>{user.slider_name}</td>
-  <td><Delete /></td>
+  <td onClick={()=>{onDelete(user.id)}}><Delete /></td>
   
  
 </tr>
