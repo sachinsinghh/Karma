@@ -171,6 +171,7 @@ const useStyles = makeStyles(theme => ({
         <TableHead>
           <TableRow>
             <StyledTableCell align="left">Id</StyledTableCell>
+            <StyledTableCell align="left">Image</StyledTableCell>
             <StyledTableCell align="left">Slider Name</StyledTableCell>
             <StyledTableCell align="left">Action</StyledTableCell>
             
@@ -178,11 +179,14 @@ const useStyles = makeStyles(theme => ({
         </TableHead>
         <TableBody>
        { adata.map(user => {
+
+
         
          return (
  <tr key={user.id}>
    
  <td>{user.id}</td>
+ <td><img style={{ height: 50, width: 50 }} alt="image" src={user.image} /></td>
   <td>{user.slider_name}</td>
   <td onClick={()=>{onDelete(user.id)}}><Delete /></td>
   

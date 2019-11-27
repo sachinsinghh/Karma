@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 
 class LoginController extends Controller
 {
@@ -102,20 +104,21 @@ class LoginController extends Controller
 			$img = str_replace(' ','+', $img);
 				
 				$fileName = uniqid().'.jpg';
-			file_put_contents(public_path().'/slider/'.$fileName, base64_decode($img));
+			file_put_contents(storage_path().'/slider/'.$fileName, base64_decode($img));
+
+			$url = url('storage/slider/'.$fileName);
+	
 			
-			$image = '/slider/'.$fileName;
+			
+			//$image = '/slider/'.$fileName;
 		}
 		else
 		{
 			return response()->json(['error'=>'Please choose an Image ','status'=>500]);
 		}
 		
-			
-			
-		
     	try {
-    		DB::table('sliders')->insert( ['slider_name' => $sliderName, 'image' => $image]);
+    		DB::table('sliders')->insert( ['slider_name' => $sliderName, 'image' => $url]);
     		return response()->json(['success'=>'Slider Added successfully','status'=>200]);
     	} catch (Exception $e) {
     		
