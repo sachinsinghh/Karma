@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\URL;
 class LoginController extends Controller
 {
 
+	public function sliderEdit(Request $request, $id)
+	{
+		//return $reqeust->id;
+		$slider = DB::table('sliders')->where('id',$request->id)->first();
+		return response()->json(['result'=>$slider,'success'=>'Edit sachin Data','status'=>200]);
+	
+	}
+
 		public function bind()
 		{
 			$n=6;
@@ -106,7 +114,7 @@ class LoginController extends Controller
 				$fileName = uniqid().'.jpg';
 			file_put_contents(storage_path().'/slider/'.$fileName, base64_decode($img));
 
-			$url = url('storage/slider/'.$fileName);
+			$url = url('http://localhost/karma/storage/slider/'.$fileName);
 	
 			
 			

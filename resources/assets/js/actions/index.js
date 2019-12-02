@@ -4,12 +4,14 @@ import { EMAIL_CHANGED,
       LOGIN_USER_FAIL,
       LOGIN_USER_SUCCESS, 
       ADD_SLIDER,
+      EDIT_SLIDER,
       SLIDER_NAME,
       SLIDER_IMAGE,
       ADD_SLIDER_SUCCESS,
       ADD_SLIDER_FAIL,
       ADD_LOADER,
       SLIDER_STATUS,
+      EDIT_STATUS_FALSE,
     LOGIN_USER } from './types';
 
 export const emailChanged = (text) => {
@@ -24,6 +26,13 @@ export const passwordChanged = (text) => {
     type: PASSWORD_CHANGED,
     payload: text
     };
+};
+
+export const updateEditSatusFalse = () => {
+ 
+  return {
+    type: EDIT_STATUS_FALSE
+  };
 };
 
 export const addSlider = ({ name, image }) => {
@@ -72,6 +81,13 @@ export const loginUser = ({ email, password }) => {
     })
     .then(user => loginUserSuccess(dispatch, user))
    .catch(() => loginUserFail(dispatch));
+    };
+};
+
+export const editSlider = (id) => {
+  return {
+    type: EDIT_SLIDER,
+    payload: id
     };
 };
 

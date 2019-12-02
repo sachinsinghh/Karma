@@ -26,6 +26,7 @@ import AdminDashboard from '../pages/AdminHome';
 import Slider from '../pages/Slider';
 import AdminHome from '../pages/AdminHome';
 import SliderList from '../pages/SliderList';
+import EditSlider from '../pages/EditSlider';
 
 function MadeWithLove() {
   return (
@@ -182,6 +183,8 @@ export default function Dashboard() {
         <Route path="/admin" exact component={AdminHome} />
         <Route path="/admin/slider" exact component={SliderList} />
         <Route path="/admin/addSlider" exact component={Slider} />
+        <Route path="/admin/editSlider" exact component={EditSlider} />
+
         </Switch>
         </Container>
     

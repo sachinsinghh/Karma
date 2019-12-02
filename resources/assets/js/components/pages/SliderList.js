@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, history } from 'react-router-dom';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,8 +10,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import  Delete from '@material-ui/icons/Delete';
+import Edit from '@material-ui/icons/Edit';
+import { Redirect } from 'react-router-dom';
 import { Modal, Button, InputGroup, FormControl, Row, Container, Col } from 'react-bootstrap';
-import { submitSliderStatus } from '../../actions';
+import { submitSliderStatus, editSlider, updateEditSatusFalse } from '../../actions';
 
 const StyledTableCell = withStyles(theme => ({
   head: {
@@ -22,9 +24,6 @@ const StyledTableCell = withStyles(theme => ({
     fontSize: 14,
   },
 }))(TableCell);
-
-
-
 
 
 const useStyles = makeStyles(theme => ({
@@ -78,7 +77,10 @@ const useStyles = makeStyles(theme => ({
   
   const [adata, setData] = useState([]);
 
+
   useEffect(() => {
+    
+     
     axios.post('http://127.0.0.1:8000/api/sliderList', { search })
       .then(res => {
         setData(res.data.result);
@@ -87,7 +89,7 @@ const useStyles = makeStyles(theme => ({
   }, [search]);
 
   useEffect(() => {
-   
+
     if (props.savedSuccessSlider === true) {
       
       setShow(true);
@@ -106,13 +108,27 @@ const useStyles = makeStyles(theme => ({
   setDel(true);
  };
 
+ const onEdit = (e) => {
+  props.editSlider(e);
+ };
+
+ let editRedirect = null;
+ 
+
+      if(props.idToUpdate)
+        {
+         
+          editRedirect = <Redirect to='/admin/editSlider' />;
+        }
 
   
 
   return (
      
+     
     <div>
-      
+
+{editRedirect}
        <Container>
        <Row>
     <Col>
@@ -179,8 +195,6 @@ const useStyles = makeStyles(theme => ({
         </TableHead>
         <TableBody>
        { adata.map(user => {
-
-
         
          return (
  <tr key={user.id}>
@@ -188,7 +202,7 @@ const useStyles = makeStyles(theme => ({
  <td>{user.id}</td>
  <td><img style={{ height: 50, width: 50 }} alt="image" src={user.image} /></td>
   <td>{user.slider_name}</td>
-  <td onClick={()=>{onDelete(user.id)}}><Delete /></td>
+  <tr><td onClick={()=>{onDelete(user.id)}}><Delete /></td><td onClick={()=>{onEdit(user.id)}}> <Edit /></td></tr>
   
  
 </tr>
@@ -205,10 +219,10 @@ const useStyles = makeStyles(theme => ({
 }
 
 const mapStateToProps = state => {
-  
  
   return {
-      savedSuccessSlider: state.admin.submitted
+      savedSuccessSlider: state.admin.submitted,
+      idToUpdate: state.admin.idToUpdate
   };
   };
-  export default connect(mapStateToProps, { submitSliderStatus })(SliderList);
+  export default connect(mapStateToProps, { submitSliderStatus, editSlider, updateEditSatusFalse })(SliderList);

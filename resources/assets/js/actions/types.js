@@ -10,3 +10,5 @@ export const ADD_SLIDER_SUCCESS = 'add_slider_success';
 export const ADD_SLIDER_FAIL = 'add_slider_fail';
 export const ADD_LOADER = 'add_loader';
 export const SLIDER_STATUS = 'slider_status';
+export const EDIT_SLIDER = 'editSlider';
+export const EDIT_STATUS_FALSE = 'updateEditSatusFalse';

@@ -22,3 +22,4 @@ Route::post('register','API\LoginController@register');
 Route::post('addSlider','API\LoginController@addSlider');
 Route::post('sliderList','API\LoginController@sliderList');
 Route::delete('sliderDelete/{id}','API\LoginController@delete');
+Route::get('sliderEdit/{id}','API\LoginController@sliderEdit');

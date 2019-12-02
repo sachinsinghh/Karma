@@ -1,14 +1,16 @@
-import { SLIDER_NAME, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCCESS, SLIDER_STATUS } from '../actions/types';
+import { SLIDER_NAME, EDIT_STATUS_FALSE, EDIT_SLIDER, SLIDER_IMAGE, ADD_SLIDER_FAIL, ADD_LOADER, ADD_SLIDER_SUCCESS, SLIDER_STATUS } from '../actions/types';
 
 const INITIAL_STATE = { sliderName: '', loading: false };
 
 export default (state = INITIAL_STATE, action) => {
+   
     
-    switch (action.type) {
-       
-            
+    switch (action.type) {        
         case SLIDER_NAME:
         return { ...state, sliderName: action.payload, error: '', submitted: false };
+
+        case EDIT_STATUS_FALSE:
+        return { ...state, idToUpdate: null };
 
         case SLIDER_IMAGE:
         return { ...state, sliderImage: action.payload, error: '' };
@@ -24,6 +26,10 @@ export default (state = INITIAL_STATE, action) => {
 
         case SLIDER_STATUS:
         return { ...state, submitted: false };
+
+        case EDIT_SLIDER:
+        return { ...state, idToUpdate: action.payload };
+
         default:
         return state;
     }
